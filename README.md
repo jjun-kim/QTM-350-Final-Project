@@ -42,7 +42,7 @@ $$ y(Smart/Dumb) = \beta_0 + \beta_1* age + \beta_2 * gender + \beta_3 * race +.
 
 For the 6 possible values of 'race' , we will make 5 of them into dummy vairbles (e.g. is_black = {0,1}) that only take values 0 or 1. We leave 1 of the values to avoid perfect coolinearity problem. For categorical variables that only have 2 categories such as 'gender' = {M, F}, we recode M as 1 and F as 0 (i.e. is_male ={1,0}), or vice versa. 
 
-We also turn y into a dummy variable (y = {Smart = 1, Dumb = 0}) Probabilistic regression model after dummy coding: $$ y (Smart = 1/Dumb = 0) = \beta_0 + \beta_1* age + \beta_2* ismale + \beta_3* isblack + \beta_4* iseastasian + ... + \epsilon, \epsilon \sim \mathcal{N}(0, \sigma^2 = 1)$$
+We also turn y into a dummy variable (y = {Smart = 1, Dumb = 0}) Probabilistic regression model after dummy coding: $$ y(Smart = 1/Dumb = 0) = \beta_0 + \beta_1* age + \beta_2* ismale + \beta_3* isblack + \beta_4* iseastasian + ... + \epsilon $$, $$\epsilon \sim \mathcal{N}(0, \sigma^2 = 1)$$
 
 
 Interpretation of the coefficients: since we are using a probabilistic regression model, the interpretation of coefficients is in terms of  the likelihood that y takes on one value instead of the other. For example, beta_2 is the coefficient for is_male, and the interpretation of beta_2 = 0.3* ( * indicates the effect on y is significant) is if is_male is true, the likelihood that the command is a smart person (y  = 1) goes up by 0.3.
