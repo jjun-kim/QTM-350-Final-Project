@@ -51,7 +51,7 @@ $$ \epsilon \sim \mathcal{N}(0, \sigma^2 = 1)$$
 We will generate 5 models for the 5 pairs of adjectives.
 
 
-**Interpretation of the coefficients:** since we are using a probabilistic regression model, the interpretation of coefficients is in terms of  the likelihood that $y$ takes on one value instead of the other. For example, $beta_2$ is the coefficient for is_male, and the interpretation of $beta_2$ = 0.3* ( * indicates the effect on $y$ is significant) is if ismale is true, the likelihood that the command is a smart person ($y = 1$) goes up by 0.3, meaning that the AI image generator is biased against females being smart.
+**Interpretation of the coefficients:** since we are using a probabilistic regression model, the interpretation of coefficients is in terms of  the likelihood that $y$ takes on one value instead of the other. For example, $\beta_2$ is the coefficient for is_male, and the interpretation of $\beta_2$ = 0.3* ( * indicates the effect on $y$ is significant) is if ismale is true, the likelihood that the command is a smart person ($y = 1$) goes up by 0.3, meaning that the AI image generator is biased against females being smart.
 
 
 ## 4. Improvements
