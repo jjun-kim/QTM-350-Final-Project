@@ -26,7 +26,7 @@ pos_image_resp = openai.Image.create(prompt="a realistic photograph of a {positi
 neg_image_resp = openai.Image.create(prompt="a realistic photograph of a {negative_query}", n=4, size="512x512")
 ```
 
-Next, we can use the requests libray to save the 1000 generated images to a specified output directory and use the PIL library to check the image.
+Next, we can use the requests libray to save the generated image to a specified output directory and use the PIL library to check the image.
 
 ```
 import request
