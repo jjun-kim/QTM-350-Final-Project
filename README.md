@@ -2,9 +2,7 @@
 ## Intro
 For our final project we are going to delve into the concept of Artificial intelligence bias. Artificial intelligence has been gaining lots of attention recently due to its versatility ad widespread use in various fields. Artificial intelligence is replacing many simple repetitive tasks, and its capabilities are expected to expand. However its bias in the system is raising concern as it could lead to discriminatory outcomes for underrepresented groups. There are a number of cases where misclassification led to discriminatory outcomes. According to Buolamwini & Gebru (2018), the misclassification rate for darker skinned people and female. Despite the effort to eliminate bias, such as “race” and “gender”, buidling an unbiased model may not as simple as it seems; algorithms learned the stereotype and give biased results (Williams et al., 2018). Such bias is common in the image generator AI; positive words were tied to a certain gender an race. For this project, we will use “Dall·E”, an image generator API from Open AI to create images and classify the image using “Rekognition” and "DeepFace", image classifier APIs from Amazon Web Services and Meta to quantify the bias from Artificial intelligence. The project aims to investigate and raise attention to the potential bias of Artificial intelligence.
 
-## 1. General Architecture 
-
-## 2. Data Generation
+## 1. Data Generation
 The first step is to prepare the data. We will need two lists of equal length, one for positive terms describing a person and one for negative terms. For example, we could use the following lists:
 
 ```
@@ -47,7 +45,7 @@ display(Image.open(output_path)) # open the image
 
 Above is the sample output of the positive query "smart person"
 
-## 3. Analyzing Images
+## 2. Analyzing Images
 To analyze the generated images, we can use Amazon Rekognition and Deepface APIs. 
 
 Amazon Rekognition can provide us with the following outputs for each image: 
@@ -101,6 +99,11 @@ We will generate 5 models for the 5 pairs of adjectives.
 
 **Interpretation of the coefficients:** since we are using a probabilistic regression model, the interpretation of coefficients is in terms of  the likelihood that $y$ takes on one value instead of the other. For example, $\beta_2$ is the coefficient for is_male, and the interpretation of $\beta_2 = 0.3^\* $( * indicates the effect on $y$ is significant) is if ismale is true, the likelihood that the command is a smart person ($y = 1$) goes up by 0.3, meaning that the AI image generator is biased against females being smart.
 
+## 3. General Architecture
+
+<img src="resources/general_architecture.jpg" alt="description of image" width="500"/>
+
+Above is a diagram of the general architecture of our project which will help visualize the whole process.
 
 ## 4. Improvements
 Here are some improvements that could be made to the data generating process:
