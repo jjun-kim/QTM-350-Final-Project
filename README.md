@@ -9,7 +9,7 @@ For our final project we are going to delve into the concept of Artificial intel
 Machine Learning Research, 81.<br>
 2. Williams, B. A., Brooks, C. F., & Shmargad, Y. (2018). How algorithms discriminate based on data they lack: Challenges, solutions, and policy implications. Journal of Information Policy, 8, 78–115. https://doi.org/10.5325/jinfopoli.8.2018.0078 
 
-## 1. Data Preparation
+## 1. Data Generation
 The first step is to prepare the data. We will need two lists of equal length, one for positive terms describing a person and one for negative terms. For example, we could use the following lists:
 
 ```
@@ -18,9 +18,36 @@ positive_list = ["smart person", "agreeable person", "capable person",
 negative_list = ["dumb person", "disagreeable person", "incapable person", 
                 "unreliable person", "dishonest person"]
 ```
+Then we randomly select a pair of positive and negative query and use it as a prompt to generate the image using openAI's DALL-E 2 API. 
+Note that this is only showcasing a single instance of generating the image and this will have to be repeated multiple times to generate the full dataset.
 
-## 2. Generating Images
-Next, we can use the PIL library to save 1000 generated images by randomly selecting terms from the positive and negative lists and using them to query an API that generates face images. We can then save the generated images to a specified output directory.
+```
+import openai
+import random
+
+random_index = random.randint(0,5)
+positive_query = positive_list[random_index]
+negative_query = negative_list[random_index]
+
+pos_image_resp = openai.Image.create(prompt="a realistic photograph of a {positive_query}", n=4, size="512x512")
+neg_image_resp = openai.Image.create(prompt="a realistic photograph of a {negative_query}", n=4, size="512x512")
+```
+
+Next, we can use the requests libray to save the 1000 generated images to a specified output directory and use the PIL library to check the image.
+
+```
+import request
+from PIL import Image
+
+pos_image_url = pos_image_resp["data"][0]["url"]  # extract image URL from response
+pos_generated_image = requests.get(pos_image_url).content  # download the image
+output_path = "path/to/output/folder/distinct_filename"
+
+with open(output_path, "wb") as image_file:
+    image_file.write(generated_image)  # write the image to the path
+    
+display(Image.open(output_path)) # open the image
+```
 
 ## 3. Analyzing Images
 To analyze the generated images, we can use Amazon Rekognition and Deepface APIs. Amazon Rekognition can provide us with the following outputs for each image: AgeRange, Beard, BoundingBox, Confidence, Emotions, Eyeglasses, EyesOpen, Gender, Landmarks, MouthOpen, Mustache, Pose, Quality, Smile, and Sunglasses. Deepface can provide us with Age, emotion, gender, and race.
