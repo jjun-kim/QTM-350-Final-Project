@@ -90,7 +90,7 @@ For the 6 possible values of 'race' , we will make 5 of them into dummy vairbles
 
 We also turn dependent variables into a dummy variable (y {Smart = 1, Dumb = 0}) Probabilistic regression model after dummy coding: 
 
-$$ y(Smart = 1/Dumb = 0) = \beta0 + \beta_1* age + \beta_2* is\_male + \beta_3* is\_black + \beta_4* is\_eastasian + ... + \epsilon $$
+$$y(Smart = 1/Dumb = 0) = \beta0 + \beta_1* age + \beta_2* is\_male + \beta_3* is\_black + \beta_4* is\_eastasian + ... + \epsilon$$
 
 $$ \epsilon \sim \mathcal{N}(0, \sigma^2 = 1)$$
 
