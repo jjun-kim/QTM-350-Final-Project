@@ -105,9 +105,6 @@ We will generate 5 models for the 5 pairs of adjectives.
 
 Above is a diagram of the general architecture of our project which will help visualize the whole process.
 
-## 4. Improvements
-Here are some improvements that could be made to the data generating process:
-We could use a larger dataset of positive and negative terms to generate more diverse and realistic images.
 
 
 #### Works Cited
