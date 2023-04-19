@@ -101,7 +101,7 @@ We will generate 5 models for the 5 pairs of adjectives.
 
 ## 3. General Architecture
 
-<img src="resources/Newest Architecture.jpg" alt="description of image" width="500"/>
+<img src="resources/Architecture.jpg" alt="description of image" width="500"/>
 
 Above is a diagram of the general architecture of our project which will help visualize the whole process.
 
