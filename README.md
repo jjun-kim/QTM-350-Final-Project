@@ -105,7 +105,8 @@ We will generate 5 models for the 5 pairs of adjectives.
 
 Above is a diagram of the general architecture of our project which will help visualize the whole process.
 
-
+URL to the images
+https://drive.google.com/drive/folders/1NoTL6AqFlgXAmTW5KewJrQ5QUdiYUt5b?usp=share_link
 
 #### Works Cited
 1. Buolamwini, J., & Gebru, T. (2018). Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification. Proceedings of 
